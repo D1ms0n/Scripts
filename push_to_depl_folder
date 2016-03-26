@@ -1,0 +1,5 @@
+cd /data/work/virtualenvs/7day/src/
+cp -R studio/ /home/dima/deployment/7day/wsgi
+cd studio/studioapp/static/
+cp -R * /home/dima/deployment/7day/wsgi/static/
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+name="$1"
+cd /data/work/virtualenvs/
+/data/work/buildouts/python/bin/virtualenv-2.7 "$1" --no-site-packages         #  ...  <----NAME!!!!!!!!!!!
+cd "$1"/
+source bin/activate
+pip install Django
+echo 'install Django'
+mkdir src
+cd src/
+../bin/django-admin startproject "$2"
+cd "$2"
+python manage.py startapp "$3"
+cd "$3"
+mkdir -p templates/"$2"   #/data/work/virtualenvs/7day/src/studio/studioapp$ mkdir -p templates/studio

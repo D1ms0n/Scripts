@@ -1,0 +1,10 @@
+import os
+os.chdir('/data/work/virtualenvs/magaz/src/')
+os.system('mkdir -p test/test')
+os.system('mkdir -p test/testapp')
+os.system('cp -R clear/clear/*  test/test/')
+os.system('cp -R clear/clearapp/*  test/testapp/')
+os.environ["DJANGO_SETTINGS_MODULE"]="test.settings"
+os.system('./copy_mag test testapp')
+os.chdir('/data/work/virtualenvs/magaz/src/test')
+os.system('python manage.py runserver')
